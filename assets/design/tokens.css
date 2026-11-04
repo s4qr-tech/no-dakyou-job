@@ -1,0 +1,68 @@
+/* JIKU Design Language (JDL) v1.0 — tokens and base */
+:root {
+  /* color */
+  --jdl-night: #03214E;
+  --jdl-deep: #13294B;
+  --jdl-accent: #144DA0;
+  --jdl-tint: #E8EEF7;
+  --jdl-mist: #F1F3F7;
+  --jdl-rule: #D1D5DB;
+  --jdl-ink: #111827;
+  --jdl-note: #4B5563;
+  --jdl-alert: #B42318;
+  --jdl-alert-bg: #FFF7F7;
+  --jdl-paper: #FFFFFF;
+
+  /* font */
+  --jdl-font: "游ゴシック体", "Yu Gothic", "YuGothic", "Noto Sans JP", sans-serif;
+  --jdl-font-cover: "ヒラギノ角ゴシック", "Hiragino Sans", "游ゴシック体", "Yu Gothic", sans-serif;
+
+  /* type scale (pt, A4 document scale) */
+  --jdl-fs-cover: 26pt;
+  --jdl-fs-title: 16pt;
+  --jdl-fs-h2: 12pt;
+  --jdl-fs-h3: 10.5pt;
+  --jdl-fs-body: 10pt;
+  --jdl-fs-table: 9pt;
+  --jdl-fs-num: 15pt;
+  --jdl-fs-eyebrow: 8.5pt;
+  --jdl-fs-note: 8pt;
+  --jdl-lh-body: 1.5;
+  --jdl-lh-head: 1.15;
+
+  /* space */
+  --jdl-s1: 4pt;
+  --jdl-s2: 8pt;
+  --jdl-s3: 12pt;
+  --jdl-s4: 16pt;
+  --jdl-s5: 24pt;
+  --jdl-s6: 32pt;
+  --jdl-s7: 48pt;
+
+  /* line */
+  --jdl-bw-thin: 0.5pt;
+  --jdl-bw-base: 1.5pt;
+  --jdl-bw-bar: 3pt;
+
+  /* page */
+  --jdl-page-margin: 72pt;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body {
+  margin: 0;
+  font-family: var(--jdl-font);
+  font-size: var(--jdl-fs-body);
+  line-height: var(--jdl-lh-body);
+  color: var(--jdl-ink);
+  background: var(--jdl-paper);
+  text-align: left;
+  line-break: strict;
+}
+
+h1, h2, h3, p, ul { margin: 0; }
+strong { font-weight: 700; color: var(--jdl-accent); }
+em, i, u { font-style: normal; text-decoration: none; }

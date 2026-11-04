@@ -1,0 +1,175 @@
+/* JIKU Design Language (JDL) v1.0 — page and blocks (requires tokens.css) */
+
+/* ---------- page ---------- */
+.jdl-page {
+  position: relative;
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  padding: var(--jdl-page-margin);
+  background: var(--jdl-paper);
+}
+@media screen {
+  body { background: var(--jdl-mist); }
+  .jdl-page { margin: var(--jdl-s4) auto; }
+}
+@media print {
+  @page { size: A4; margin: 0; }
+  .jdl-page { margin: 0; break-after: page; }
+}
+.jdl-footer {
+  position: absolute;
+  right: var(--jdl-page-margin);
+  bottom: 36pt;
+  font-size: var(--jdl-fs-note);
+  color: var(--jdl-note);
+}
+
+/* ---------- text ---------- */
+.jdl-eyebrow {
+  font-size: var(--jdl-fs-eyebrow);
+  font-weight: 700;
+  color: var(--jdl-accent);
+  margin-bottom: 3pt;
+}
+h1 {
+  font-size: var(--jdl-fs-title);
+  font-weight: 700;
+  line-height: var(--jdl-lh-head);
+  padding-bottom: 6pt;
+  margin-bottom: var(--jdl-s2);
+  border-bottom: var(--jdl-bw-thin) solid var(--jdl-rule);
+}
+h2 {
+  font-size: var(--jdl-fs-h2);
+  font-weight: 700;
+  line-height: var(--jdl-lh-head);
+  color: var(--jdl-deep);
+  margin: 14pt 0 5pt;
+}
+h3 {
+  font-size: var(--jdl-fs-h3);
+  font-weight: 700;
+  line-height: var(--jdl-lh-head);
+  color: var(--jdl-deep);
+  margin: 10pt 0 4pt;
+}
+p { margin-bottom: 6pt; }
+.jdl-note {
+  font-size: var(--jdl-fs-note);
+  line-height: 1.3;
+  color: var(--jdl-note);
+  margin-top: 5pt;
+}
+ul { list-style: none; padding-left: 21pt; margin-bottom: 6pt; }
+li { position: relative; }
+li::before {
+  content: "-";
+  position: absolute;
+  left: -14pt;
+  font-weight: 700;
+  color: var(--jdl-accent);
+}
+
+/* ---------- JB-06 comparison table / JB-01 stamp table ---------- */
+.jb-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--jdl-fs-table);
+  margin: var(--jdl-s3) 0;
+}
+.jb-table th, .jb-table td {
+  border: var(--jdl-bw-thin) solid var(--jdl-rule);
+  padding: 4.5pt 7pt;
+  vertical-align: top;
+  text-align: left;
+}
+.jb-table thead th { background: var(--jdl-mist); font-weight: 700; color: var(--jdl-ink); }
+.jb-table tbody th { background: var(--jdl-mist); font-weight: 700; width: 70pt; }
+.jb-table tr { break-inside: avoid; }
+.jb-table thead { display: table-header-group; }
+.jb-table th.is-key { background: var(--jdl-deep); color: var(--jdl-paper); }
+.jb-table td.is-key { background: var(--jdl-tint); color: var(--jdl-accent); font-weight: 700; }
+.jb-table tr.is-no td, .jb-table tr.is-no th { background: var(--jdl-alert-bg); color: var(--jdl-alert); }
+.jb-stamp {
+  display: inline-block;
+  min-width: 44pt;
+  white-space: nowrap;
+  padding: 2pt 6pt;
+  font-size: var(--jdl-fs-table);
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+}
+.jb-stamp--core { background: var(--jdl-deep); color: var(--jdl-paper); }
+.jb-stamp--nice { background: var(--jdl-tint); color: var(--jdl-accent); }
+.jb-stamp--no { background: var(--jdl-alert-bg); color: var(--jdl-alert); }
+
+/* ---------- JB-04 claim band ---------- */
+.jb-band {
+  display: grid;
+  grid-template-columns: minmax(max-content, 17.5%) 1fr;
+  min-height: 34pt;
+  margin: var(--jdl-s3) 0;
+  font-weight: 700;
+  color: var(--jdl-paper);
+  break-inside: avoid;
+}
+.jb-band__label { background: var(--jdl-accent); font-size: 9.5pt; padding: 0 7pt; display: flex; align-items: center; white-space: nowrap; }
+.jb-band__text { background: var(--jdl-deep); font-size: var(--jdl-fs-body); padding: 0 7pt; display: flex; align-items: center; }
+.jb-band strong { color: var(--jdl-paper); }
+
+/* ---------- JB-07 callout ---------- */
+.jb-callout {
+  background: var(--jdl-tint);
+  padding: 7pt 12pt;
+  margin: var(--jdl-s3) 0;
+  font-size: var(--jdl-fs-table);
+  break-inside: avoid;
+}
+.jb-callout__tag { display: block; font-size: var(--jdl-fs-eyebrow); font-weight: 700; color: var(--jdl-accent); }
+.jb-callout__head { font-size: 9.5pt; font-weight: 700; color: var(--jdl-ink); margin-bottom: 2pt; }
+.jb-callout--strong { background: var(--jdl-deep); color: var(--jdl-paper); }
+.jb-callout--strong .jb-callout__tag { color: var(--jdl-tint); }
+.jb-callout--strong .jb-callout__head, .jb-callout--strong strong { color: var(--jdl-paper); }
+.jb-callout--alert { background: var(--jdl-alert-bg); border-left: var(--jdl-bw-bar) solid var(--jdl-alert); }
+.jb-callout--alert .jb-callout__tag, .jb-callout--alert .jb-callout__head { color: var(--jdl-alert); }
+
+/* ---------- JB-10 three-column cards ---------- */
+.jb-cards3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8pt; margin: var(--jdl-s3) 0; }
+.jb-card {
+  border: var(--jdl-bw-thin) solid var(--jdl-rule);
+  border-top: var(--jdl-bw-bar) solid var(--jdl-accent);
+  background: var(--jdl-paper);
+  padding: 10pt;
+  break-inside: avoid;
+}
+.jb-card h3 { font-size: 11pt; margin: 6pt 0 4pt; }
+.jb-card p, .jb-card li { font-size: 9.5pt; }
+.jb-card ul { padding-left: 14pt; margin: 4pt 0 0; }
+.jb-card li::before { left: -10pt; }
+
+/* ---------- JB-09 stairs ---------- */
+.jb-stairs { display: flex; align-items: flex-end; gap: 2pt; margin: var(--jdl-s3) 0; }
+.jb-stairs__step {
+  flex: 1;
+  height: calc(22pt * var(--k, 1));
+  border: var(--jdl-bw-base) solid var(--jdl-deep);
+  background: var(--jdl-paper);
+  padding-top: 4pt;
+  text-align: center;
+  font-size: 9pt;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--jdl-deep);
+}
+.jb-stairs__step:last-child { background: var(--jdl-deep); color: var(--jdl-paper); }
+
+/* ---------- JB-11 horizontal bars ---------- */
+.jb-bar { display: grid; grid-template-columns: 1fr 220pt 48pt; gap: 8pt; align-items: center; margin: 4pt 0; }
+.jb-bar__name { font-size: 9.5pt; font-weight: 700; }
+.jb-bar__desc { display: block; font-size: var(--jdl-fs-note); font-weight: 400; color: var(--jdl-note); }
+.jb-bar__track { height: 20pt; }
+.jb-bar__fill { height: 100%; width: calc(var(--v, 0) * 1%); background: var(--jdl-accent); }
+.jb-bar__fill--outline { background: var(--jdl-paper); border: var(--jdl-bw-base) solid var(--jdl-accent); }
+.jb-bar__value { font-size: 9.5pt; font-weight: 700; color: var(--jdl-accent); text-align: right; }
