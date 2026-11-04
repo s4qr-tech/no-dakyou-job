@@ -1,16 +1,23 @@
 Copyright (c) 2026 no-dakyou-job authors. All rights reserved.
 
-This repository and its contents (including the skill instructions, question
-sets, industry notes, templates, and design assets) are proprietary.
+This repository is publicly viewable, but it is not open source.
 
-Permission is granted only to individuals who have been explicitly invited by
-the repository owner to use this skill for their own personal job-search
-purposes. Without prior written permission from the owner, you may not copy,
-modify, redistribute, sublicense, sell, or publish this repository or any part
-of it, and you may not use it to build a competing product or service.
+You may:
+- view and read this repository;
+- install and use this skill for your own personal job-search purposes,
+  including through Claude Code, Claude, or the URL-based start described
+  in README.md.
 
-If the repository owner later decides to open-source this project, this file
-will be replaced with the chosen license.
+You may not, without prior written permission from the repository owner:
+- redistribute, republish, or mirror this repository or any part of it
+  (including the skill instructions, question sets, industry notes,
+  templates, and design assets);
+- sell it, or use it in a paid or commercial product or service;
+- modify it and distribute the modified version;
+- use it to build a competing product or service.
+
+Forking on GitHub for the sole purpose of viewing is permitted by GitHub's
+terms, but does not grant any further rights beyond those listed above.
 
 THE SOFTWARE AND CONTENTS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 EXPRESS OR IMPLIED. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM,
