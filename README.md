@@ -15,6 +15,23 @@
 
 成果物は HTML（デザイナーが編集しやすい形）で出力します。希望すれば pptx / docx でも出力します。
 
+## 3つの始め方
+
+**1. URLを貼るだけ（claude.ai のチャット。Webアクセスが使える環境）**
+次のメッセージをそのまま送る。スキルとして登録されるわけではなく、毎回URLから読み込んで動く。
+```
+https://github.com/s4qr-tech/no-dakyou-job の START.md を読んで、その手順で自分軸ファインダーを始めてください
+```
+
+**2. Claude Code に入れる**
+```
+/plugin marketplace add s4qr-tech/no-dakyou-job
+/plugin install no-dakyou-job@no-dakyou-job
+```
+
+**3. ZIPで入れる（claude.ai のスキルとして登録）**
+下の「導入手順」を参照。
+
 ## 導入手順
 
 ### Claude に入れる
@@ -23,8 +40,8 @@
 3. スキル一覧で `no-dakyou-job` をオンにする。
 4. チャットで `/no-dakyou-job` と入力して始める。
 
-### Claude Code で使う場合（URLから導入）
-前提：リポジトリへの招待を承諾済みで、PCに GitHub の認証（`gh auth login` など）があること。
+### Claude Code で使う場合
+
 ```
 /plugin marketplace add s4qr-tech/no-dakyou-job
 /plugin install no-dakyou-job@no-dakyou-job
