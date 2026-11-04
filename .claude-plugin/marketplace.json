@@ -1,0 +1,11 @@
+{
+  "name": "no-dakyou-job",
+  "owner": { "name": "s4qr-tech" },
+  "plugins": [
+    {
+      "name": "no-dakyou-job",
+      "source": "./",
+      "description": "自分軸ファインダー：就活の前段で本来の自分軸を言語化し、/jobh-jp へ引き継ぐ"
+    }
+  ]
+}

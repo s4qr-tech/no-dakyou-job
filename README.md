@@ -18,13 +18,21 @@
 ## 導入手順
 
 ### Claude に入れる
-1. このリポジトリを ZIP で取得する（またはリリースの配布用 ZIP を使う）。ZIP の最上位に `no-dakyou-job/` フォルダがあること。
+1. このリポジトリを ZIP で取得する（またはリリースの配布用 ZIP を使う）。ZIP の最上位に `no-dakyou-job/` フォルダ（中に SKILL.md）があること。
 2. Claude の「Customize > Skills」から、ZIP をアップロードする。（画面の名称は変わることがあります。Claude のヘルプで最新の手順を確認してください）
 3. スキル一覧で `no-dakyou-job` をオンにする。
 4. チャットで `/no-dakyou-job` と入力して始める。
 
-### Claude Code で使う場合
-`no-dakyou-job/` フォルダを `~/.claude/skills/` に置く。
+### Claude Code で使う場合（URLから導入）
+前提：リポジトリへの招待を承諾済みで、PCに GitHub の認証（`gh auth login` など）があること。
+```
+/plugin marketplace add s4qr-tech/no-dakyou-job
+/plugin install no-dakyou-job@no-dakyou-job
+```
+スキルの本体は `skills/no-dakyou-job/` にあります。手動で入れる場合は、このフォルダを `~/.claude/skills/` に置いてください。
+
+### claude.ai のチャットで使う場合
+URL指定では導入できません。配布用ZIP（Releases）をダウンロードし、「Customize > Skills」からアップロードしてください。
 
 ## 使い方
 - `/no-dakyou-job` と入力して開始。言語モード（日本語／英語／両方）を選ぶと、ステップ0から1つずつ進みます。
@@ -44,19 +52,19 @@
 
 ## ファイル構成
 ```
-no-dakyou-job/
-├ SKILL.md                    スキル本体（フロー・ルール）
+（リポジトリ）
+├ .claude-plugin/             Claude Code 用の導入設定
 ├ README.md
 ├ LICENSE
-├ references/
-│ ├ questions.md              ステップ別の質問集
-│ ├ industry-map.md           業界別の観点（10業界）
-│ └ handoff-schema.md         jiku-profile.md の書式
-└ assets/design/
-  ├ tokens.css                デザイントークン
-  ├ components.css            ページ・ブロック
-  ├ design-rules.md           適用ルール（内部用）
-  └ templates/                成果物のHTMLひな形（5種）
+└ skills/no-dakyou-job/
+  ├ SKILL.md                  スキル本体（フロー・ルール）
+  ├ references/
+  │ ├ questions.md            ステップ別の質問集
+  │ ├ industry-map.md         業界別の観点（10業界）
+  │ └ handoff-schema.md       jiku-profile.md の書式
+  └ assets/design/
+    ├ tokens.css / components.css / design-rules.md
+    └ templates/              成果物のHTMLひな形（5種）
 ```
 
 ## GitHub に公開する手順（初回）
